@@ -22,13 +22,25 @@
 //     }
 // }
 
-// Node.js
+// // Node.js
+// pipeline {
+//     agent { docker { image 'node:6.3' } }
+//     stages {
+//         stage('build') {
+//             steps {
+//                 sh 'npm --version'
+//             }
+//         }
+//     }
+// }
+
+// Ruby
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { docker { image 'ruby' } }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'ruby --version'
             }
         }
     }
